@@ -14,7 +14,8 @@ public class Usuario {
     private int derrotas;
 
     public Usuario() {
-        
+        this.victorias=0;
+        this.derrotas=0;
     }
 
     public int getVictorias() {
