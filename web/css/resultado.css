@@ -14,7 +14,7 @@ body{
         "jugador imagen maquina"
         "vacio resultado empty";
     grid-template-columns: 33% 33% 33%;
-      align-items: center;
+    align-items: center;
 }
 
 div#jugador{
@@ -22,8 +22,9 @@ div#jugador{
     justify-self:center;
 }
 
-div#imagen{
-    grid-area: imagen;
+div#vs{
+    grid-area: imagen;    
+    justify-self:center;
 }
 
 div#resultado{
