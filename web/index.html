@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "stylesheet" type = "text/css" href = "css/css.css" />
+    </head>
+    <body>
+        <div>
+            <h1>Piedra, Papel, Tijera, Lagarto, Spock</h1>
+            <h2>Elige lo que quieres escoger</h2>
+        </div>
+        <div>
+            <form action="controlador.jsp" method="post">
+                <input 
+                    type="radio" name="eleccion" 
+                    id="piedra" class="input-hidden" />
+                <label for="piedra">
+                    <img 
+                        src="img/piedra.png" 
+                        alt="Piedra" />
+                </label>
+                <input 
+                    type="radio" name="eleccion" 
+                    id="papel" class="input-hidden" />
+                <label for="papel">
+                    <img 
+                        src="img/papel.png" 
+                        alt="Papel" />
+                </label> 
+                <input 
+                    type="radio" name="eleccion" 
+                    id="tijera" class="input-hidden" />
+                <label for="tijera">
+                    <img 
+                        src="img/tijera.png" 
+                        alt="Tijera" />
+                </label>
+                <input 
+                    type="radio" name="eleccion" 
+                    id="lagarto" class="input-hidden" />
+                <label for="lagarto">
+                    <img 
+                        src="img/lagarto.png" 
+                        alt="Lagarto" />
+                </label>
+                <input 
+                    type="radio" name="eleccion" 
+                    id="spock" class="input-hidden" />
+                <label for="spock">
+                    <img 
+                        src="img/spock.png" 
+                        alt="Spock" />
+                </label><br><br><br>
+                <input type="submit" name="aceptar" value="Aceptar">
+            </form>
+        </div>
+    </body>
+</html>
