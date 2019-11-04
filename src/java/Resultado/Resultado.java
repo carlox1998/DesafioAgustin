@@ -5,7 +5,6 @@ package Resultado;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author carlox
@@ -56,11 +55,13 @@ public class Resultado {
                 if (i == j) {
                     tabla[i][j] = "Empate";
                 }
-                if (i != j && i >= 3) {
-                    if (j != 4) {
-                        cambiarResultado();
-                    }
+                if (i != j && i == 3) {
+                    cambiarResultado();
                     tabla[i][j] = resultado;
+                }
+                if (i != j && i == 4) {
+                    tabla[i][j] = resultado;                    
+                    cambiarResultado();
                 }
                 if (i != j && i < 3) {
                     tabla[i][j] = resultado;
