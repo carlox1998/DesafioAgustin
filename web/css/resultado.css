@@ -12,7 +12,8 @@ body{
     display: grid;
     grid-template-areas:
         "jugador imagen maquina"
-        "vacio resultado empty";
+        "vacio resultado empty"
+        "vacio formulario empty";
     grid-template-columns: 33% 33% 33%;
     align-items: center;
 }
@@ -31,6 +32,11 @@ div#resultado{
     grid-area: resultado;
     justify-self:center;
 }
+form{
+    grid-area: formulario;
+    justify-self:center;
+}
+
 div#maquina{
     grid-area: maquina;
     justify-self:center;

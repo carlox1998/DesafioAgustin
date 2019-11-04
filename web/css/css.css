@@ -7,21 +7,62 @@ and open the template in the editor.
     Created on : 04-Nov-2019, 06:47:26
     Author     : victor
 */
+div#inicio{
+    display: grid;
+    grid-template-areas:
+        "h1"
+        "h2";
+    align-items: center;
+}
+
+div#inicio h1{
+    grid-area: h1;
+    justify-self:center;    
+}
+
+div#inicio h2{
+    grid-area: h2;   
+    justify-self:center;  
+}
+
+div#opciones{
+    display: grid;
+    grid-template-areas:
+        "opciones";
+    align-items: center;
+}
+div#opciones form{
+    display: grid;
+    grid-template-areas:
+        "opciones opciones opciones opciones opciones"
+        ". . boton . .";
+    grid-area: opciones;
+    justify-self:center;
+}
+div#opciones > form > input{
+    grid-area: opciones;
+    justify-self:center;
+}
+
+div#opciones > form > input#aceptar{
+    grid-area: boton;
+    justify-self:center;
+}
 
 .input-hidden {
-  position: absolute;
-  left: -9999px;
+    position: absolute;
+    left: -9999px;
 }
 
 input[type=radio]:checked + label>img {
-  border: 1px solid #fff;
-  box-shadow: 0 0 3px 3px #090;
+    border: 1px solid #fff;
+    box-shadow: 0 0 3px 3px #090;
 }
 
 /* Stuff after this is only to make things more pretty */
 input[type=radio] + label>img {
-  border: 1px dashed #444;
-  width: 150px;
-  height: 150px;
-  transition: 500ms all;
+    border: 1px dashed #444;
+    width: 150px;
+    height: 150px;
+    transition: 500ms all;
 }
