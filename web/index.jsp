@@ -1,32 +1,40 @@
+<%-- 
+    Document   : index
+    Created on : 04-Nov-2019, 11:01:48
+    Author     : victor
+--%>
+
+<%@page import="Clases.Usuario"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" type = "text/css" href = "css/css.css" />
-        <script>
-            function habilitar() {
-                document.getElementById("aceptar").disabled = false;
-            }
-        </script>
     </head>
     <body>
-        <div id="inicio">
+        <div id="marcador">
+            <% if (session.getAttribute("usuario") != null) {
+               Usuario u= (Usuario) session.getAttribute("usuario");
+            %>
+            <p>Victorias: <%= u.getVictorias()%></p>
+             <p>Derrotas: <%= u.getDerrotas()%></p>
+              <p>Empates:  <%= u.getEmpates()%></p>
+            <%  
+              }
+            %>
+        </div>
+        <div>         
             <h1>Piedra, Papel, Tijera, Lagarto, Spock</h1>
             <h2>Elige lo que quieres escoger</h2>
         </div>
-        <div id="opciones">
+        <div>
             <form action="controlador.jsp" method="post">
                 <input 
                     type="radio" name="eleccion" 
-                    id="piedra" class="input-hidden" value="0"
-                    onchange="habilitar()" />
+                    id="piedra" class="input-hidden" value="0" />
                 <label for="piedra">
                     <img 
                         src="img/piedra.png" 
@@ -34,7 +42,7 @@ and open the template in the editor.
                 </label>
                 <input 
                     type="radio" name="eleccion" 
-                    id="papel" class="input-hidden" value="1" onchange="habilitar()" />
+                    id="papel" class="input-hidden" value="1" />
                 <label for="papel">
                     <img 
                         src="img/papel.png" 
@@ -42,7 +50,7 @@ and open the template in the editor.
                 </label> 
                 <input 
                     type="radio" name="eleccion" 
-                    id="tijera" class="input-hidden" value="2" onchange="habilitar()"/>
+                    id="tijera" class="input-hidden" value="2" />
                 <label for="tijera">
                     <img 
                         src="img/tijera.png" 
@@ -50,7 +58,7 @@ and open the template in the editor.
                 </label>
                 <input 
                     type="radio" name="eleccion" 
-                    id="lagarto" class="input-hidden" value="3" onchange="habilitar()"/>
+                    id="lagarto" class="input-hidden" value="3" />
                 <label for="lagarto">
                     <img 
                         src="img/lagarto.png" 
@@ -58,14 +66,15 @@ and open the template in the editor.
                 </label>
                 <input 
                     type="radio" name="eleccion" 
-                    id="spock" class="input-hidden"  value="4" onchange="habilitar()"/>
+                    id="spock" class="input-hidden"  value="4"/>
                 <label for="spock">
                     <img 
                         src="img/spock.png" 
                         alt="Spock" />
                 </label><br><br><br>
-                <input type="submit" id="aceptar" name="aceptar" value="Aceptar" disabled>
+                <input type="submit" name="aceptar" value="Aceptar">
             </form>
         </div>
     </body>
 </html>
+
