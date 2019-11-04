@@ -4,6 +4,7 @@
     Author     : carlox
 --%>
 
+<%@page import="Resultado.Resultado"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     Resultado r = new Resultado();
