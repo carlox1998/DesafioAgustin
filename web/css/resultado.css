@@ -10,24 +10,29 @@ and open the template in the editor.
 
 body{
     display: grid;
-    grid-template-areas:"jugador imagen maquina"
-                        "empty resultado empty";
+    grid-template-areas:
+        "jugador imagen maquina"
+        "vacio resultado empty";
     grid-template-columns: 33% 33% 33%;
+      align-items: center;
 }
 
 div#jugador{
     grid-area: jugador;
+    justify-self:center;
 }
 
 div#imagen{
     grid-area: imagen;
 }
 
-h1{
+div#resultado{
     grid-area: resultado;
+    justify-self:center;
 }
 div#maquina{
     grid-area: maquina;
+    justify-self:center;
 }
 img{
     width: 150px;

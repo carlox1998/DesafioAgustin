@@ -52,7 +52,7 @@
                 }
             %>
         </div>
-        <div id="vs"><img id="vs" src="img/vs.jpg" alt="vs"></div>
+        <div id="vs"><img id="vs" src="img/versus.jpg" alt="vs"></div>
         <div id="maquina">
             <h1>Maquina</h1>
             <%
