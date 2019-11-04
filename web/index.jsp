@@ -1,9 +1,12 @@
+<%-- 
+    Document   : index
+    Created on : 04-Nov-2019, 11:01:48
+    Author     : victor
+--%>
+
+<%@page import="Clases.Usuario"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -12,7 +15,18 @@ and open the template in the editor.
         <link rel = "stylesheet" type = "text/css" href = "css/css.css" />
     </head>
     <body>
-        <div>
+        <div id="marcador">
+            <% if (session.getAttribute("usuario") != null) {
+               Usuario u= (Usuario) session.getAttribute("usuario");
+            %>
+            <p>Victorias: <%= u.getVictorias()%></p>
+             <p>Derrotas: <%= u.getDerrotas()%></p>
+              <p>Empates:  <%= u.getEmpates()%></p>
+            <%  
+              }
+            %>
+        </div>
+        <div>         
             <h1>Piedra, Papel, Tijera, Lagarto, Spock</h1>
             <h2>Elige lo que quieres escoger</h2>
         </div>
@@ -63,3 +77,4 @@ and open the template in the editor.
         </div>
     </body>
 </html>
+
