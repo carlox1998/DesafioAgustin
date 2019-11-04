@@ -13,28 +13,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "stylesheet" type = "text/css" href = "css/css.css" />
+        <script>
+            function habilitar() {
+                document.getElementById("aceptar").disabled = false;
+            }
+        </script>
     </head>
     <body>
         <div id="marcador">
             <% if (session.getAttribute("usuario") != null) {
                Usuario u= (Usuario) session.getAttribute("usuario");
             %>
-            <p>Victorias: <%= u.getVictorias()%></p>
-             <p>Derrotas: <%= u.getDerrotas()%></p>
-              <p>Empates:  <%= u.getEmpates()%></p>
+            <p>Victorias: <%= u.getVictorias()%>  Derrotas: <%= u.getDerrotas()%>  Empates:  <%= u.getEmpates()%></p>                   
             <%  
               }
             %>
         </div>
-        <div>         
+        <div id="inicio">         
             <h1>Piedra, Papel, Tijera, Lagarto, Spock</h1>
             <h2>Elige lo que quieres escoger</h2>
         </div>
-        <div>
+        <div id="opciones">
             <form action="controlador.jsp" method="post">
                 <input 
                     type="radio" name="eleccion" 
-                    id="piedra" class="input-hidden" value="0" />
+                    id="piedra" class="input-hidden" value="0" onchange="habilitar()"/>
                 <label for="piedra">
                     <img 
                         src="img/piedra.png" 
@@ -42,7 +45,7 @@
                 </label>
                 <input 
                     type="radio" name="eleccion" 
-                    id="papel" class="input-hidden" value="1" />
+                    id="papel" class="input-hidden" value="1" onchange="habilitar()"/>
                 <label for="papel">
                     <img 
                         src="img/papel.png" 
@@ -50,7 +53,7 @@
                 </label> 
                 <input 
                     type="radio" name="eleccion" 
-                    id="tijera" class="input-hidden" value="2" />
+                    id="tijera" class="input-hidden" value="2" onchange="habilitar()"/>
                 <label for="tijera">
                     <img 
                         src="img/tijera.png" 
@@ -58,7 +61,7 @@
                 </label>
                 <input 
                     type="radio" name="eleccion" 
-                    id="lagarto" class="input-hidden" value="3" />
+                    id="lagarto" class="input-hidden" value="3" onchange="habilitar()"/>
                 <label for="lagarto">
                     <img 
                         src="img/lagarto.png" 
@@ -66,13 +69,13 @@
                 </label>
                 <input 
                     type="radio" name="eleccion" 
-                    id="spock" class="input-hidden"  value="4"/>
+                    id="spock" class="input-hidden"  value="4" onchange="habilitar()"/>
                 <label for="spock">
                     <img 
                         src="img/spock.png" 
                         alt="Spock" />
                 </label><br><br><br>
-                <input type="submit" name="aceptar" value="Aceptar">
+                <input type="submit" id="aceptar" name="aceptar" value="Aceptar" disabled>
             </form>
         </div>
     </body>

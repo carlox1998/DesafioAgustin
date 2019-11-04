@@ -4,6 +4,7 @@
     Author     : victor
 --%>
 
+<%@page import="Clases.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,15 @@
         <link rel = "stylesheet" type = "text/css" href = "css/css.css" />
     </head>
     <body>
+        <div id="marcador">
+            <% if (session.getAttribute("usuario") != null) {
+                    Usuario u = (Usuario) session.getAttribute("usuario");
+            %>
+            <p>Victorias: <%= u.getVictorias()%>  Derrotas: <%= u.getDerrotas()%>  Empates:  <%= u.getEmpates()%></p>                   
+            <%
+                }
+            %>
+        </div>
         <div id="jugador">
             <h1>Jugador</h1>
             <%
@@ -107,7 +117,7 @@
                 }
             %>
         </div>
-        <form action="index.html" method="post">
+        <form action="index.jsp" method="post">
             <input type="submit" value="Volver a jugar?" name="Again"/>
         </form>
     </body>

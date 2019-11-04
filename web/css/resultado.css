@@ -11,13 +11,15 @@ and open the template in the editor.
 body{
     display: grid;
     grid-template-areas:
+        "marcador . ."
         "jugador imagen maquina"
         "vacio resultado empty"
         "vacio formulario empty";
-    grid-template-columns: 33% 33% 33%;
     align-items: center;
 }
-
+div#marcador{
+    grid-area: marcador;
+}
 div#jugador{
     grid-area: jugador;
     justify-self:center;
