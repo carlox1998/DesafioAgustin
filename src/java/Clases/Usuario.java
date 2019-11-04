@@ -12,28 +12,37 @@ package Clases;
 public class Usuario {
     private int victorias;
     private int derrotas;
+    private int empates;
+    
 
     public Usuario() {
         this.victorias=0;
         this.derrotas=0;
+        this.empates=0;
     }
 
     public int getVictorias() {
         return victorias;
     }
 
-    public void setVictorias(int victorias) {
-        this.victorias = victorias;
+    public void setVictorias() {
+        this.victorias ++;
     }
 
     public int getDerrotas() {
         return derrotas;
     }
 
-    public void setDerrotas(int derrotas) {
-        this.derrotas = derrotas;
+    public void setDerrotas() {
+        this.derrotas ++;
     }
-    
+    public int getEmpates() {
+        return empates;
+    }
+
+    public void setEmpates() {
+        this.empates ++;
+    }
     
     
     

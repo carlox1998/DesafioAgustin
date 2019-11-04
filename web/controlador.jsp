@@ -4,20 +4,33 @@
     Author     : carlox
 --%>
 
+<%@page import="Clases.Usuario"%>
 <%@page import="Resultado.Resultado"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     Resultado r = new Resultado();
+    if (session.getAttribute("usuario")==null) {
+            Usuario u = new Usuario();
+            session.setAttribute("usuario", u);
+        } 
+    
+    Usuario u = (Usuario) session.getAttribute("usuario");
     int jugador = Integer.parseInt(request.getParameter("eleccion"));
     int maquina = (int)(Math.random()*5);
+    session.setAttribute("jugador", jugador);
+    session.setAttribute("maquina", maquina);
     int result=r.ganar(jugador, maquina);
     if(result==0){
-        response.sendRedirect("");
+        session.setAttribute("resultado", "pierde");
+        u.setDerrotas();
     }
     if(result==1){
-        response.sendRedirect("");
+         session.setAttribute("resultado", "empata");
+         u.setEmpates();
     }
     if(result==2){
-        response.sendRedirect("");
+         session.setAttribute("resultado", "gana");
+         u.setVictorias();
     }
+    response.sendRedirect("resultado.jsp");
 %>
