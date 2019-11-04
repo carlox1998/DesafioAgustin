@@ -29,3 +29,7 @@ h1{
 div#maquina{
     grid-area: maquina;
 }
+img{
+    width: 150px;
+    height: 150px;
+}
