@@ -18,6 +18,9 @@ body{
         "vacio formulario empty";
     align-items: center;
 }
+p, h1, h2{
+    color: white;
+}
 div#marcador{
     grid-area: marcador;
 }

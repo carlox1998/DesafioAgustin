@@ -20,11 +20,13 @@ div#inicio{
 }
 
 div#inicio h1{
+    color: white;
     grid-area: h1;
     justify-self:center;    
 }
 
 div#inicio h2{
+        color: white;
     grid-area: h2;   
     justify-self:center;  
 }
