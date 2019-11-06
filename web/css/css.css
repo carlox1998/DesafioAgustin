@@ -18,7 +18,9 @@ div#inicio{
         "h2";
     align-items: center;
 }
-
+p{
+    color: white;
+}
 div#inicio h1{
     color: white;
     grid-area: h1;
@@ -26,7 +28,7 @@ div#inicio h1{
 }
 
 div#inicio h2{
-        color: white;
+    color: white;
     grid-area: h2;   
     justify-self:center;  
 }
