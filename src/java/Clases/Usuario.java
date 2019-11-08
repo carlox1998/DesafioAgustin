@@ -8,6 +8,7 @@ package Clases;
 /**
  *
  * @author carlox
+ * @version 1.4
  */
 public class Usuario {
     private int victorias;
