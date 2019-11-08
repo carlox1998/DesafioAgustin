@@ -8,6 +8,7 @@ package Resultado;
 /**
  *
  * @author carlox
+ * @version  1.4, 08/11/2019
  */
 public class Resultado {
 
@@ -21,10 +22,11 @@ public class Resultado {
     }
 
     /**
-     * Funcion en la que comprobaremos si hemos ganado.
+     * Funcion en la que comprobaremos si hemos ganado pasando los valores.
      *
-     * @param j Valor de la opcion elegida por el jugador
-     * @param m Valor de la opcion elegida por la maquina
+     * @param j Valor de la opcion elegida por el jugador.
+     * @param m Valor de la opcion elegida por la maquina.
+     * @since 1.4
      * @return
      */
     public int ganar(int j, int m) {
@@ -42,16 +44,16 @@ public class Resultado {
      * Creamos una tabla con un orden concreto en el que miraremos el resultado
      * de la partida. El orden sera Piedra=0, Papel=1, Tijeras=2, Lagarto=3 y
      * Spock=4.
-     * 
-     * El orden de los resultados en la matriz es:
-     * Empate, pierde, gana,   gana,   pierde
-     * Gana,   empate, pierde, pierde, gana
-     * Pierde, gana,   empate, gana,   pierde
-     * Pierde, gana,   pierde, empata, gana
-     * Gana,   pierde, gana,   pierde, empata
+     * Los resultados en la tabla seran:
+     * // Empate, pierde, gana, gana, pierde 
+     * // gana, empate, pierde, pierde, gana 
+     * // pierde, gana, empate, gana, pierde 
+     * // pierde, gana, pierde, empata, gana 
+     * // gana, pierde, gana, pierde, empata
      * @since 1.4
      */
     private void crearTabla() {
+
         for (int i = 0; i < 5; i++) {
             int cont = 1;
             for (int j = 0; j < 5; j++) {
@@ -63,7 +65,7 @@ public class Resultado {
                     tabla[i][j] = resultado;
                 }
                 if (i != j && i == 4) {
-                    tabla[i][j] = resultado;                    
+                    tabla[i][j] = resultado;
                     cambiarResultado();
                 }
                 if (i != j && i < 3) {
@@ -78,7 +80,8 @@ public class Resultado {
     }
 
     /**
-     * Funcion que cambia el valor del resultado.
+     * Funcion que cambia el valor del atributo resultado.
+     * @since 1.4
      */
     private void cambiarResultado() {
         if (this.resultado.equals("Gana")) {
