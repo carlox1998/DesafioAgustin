@@ -16,7 +16,8 @@
     </head>
     <body>
         <div id="marcador">
-            <% if (session.getAttribute("usuario") != null) {
+            <%
+                if (session.getAttribute("usuario") != null) {
                     Usuario u = (Usuario) session.getAttribute("usuario");
             %>
             <p>Victorias: <%= u.getVictorias()%>  Derrotas: <%= u.getDerrotas()%>  Empates:  <%= u.getEmpates()%></p>                   
